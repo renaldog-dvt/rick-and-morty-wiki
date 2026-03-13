@@ -1,22 +1,31 @@
+import CharacterCard from "../components/display/CharacterCard";
+import EpisodesCard from "../components/display/EpisodesCard";
+import LocationCard from "../components/display/LocationCard";
+import CharacterSearch from "../components/filter/CharacterSearch";
+
 export default function DashboardPage() {
   return (
-  <main className="bg-base-100 h-full w-full shadow-md">
-    <header className=" h-full w-full">
+    <main className="flex flex-col gap-2 h-full w-full shadow-md">
+      <header className="bg-base-100 flex flex-col gap-2 max-h-max w-full p-2 ">
         <h1>Character Selection</h1>
-    </header>
-    <div>
-        <section>
-            <h1>Character Details</h1>
+        <CharacterSearch />
+      </header>
+      <div className="flex flex-col h-full w-full flex flex-row gap-2 p-2">
+        <section className="bg-base-100 w-1/2 p-2">
+          <h1>Character Details</h1>
+          <CharacterCard />
         </section>
-        <div>
-        <section>
+        <div className="flex flex-col gap-2 w-1/2">
+          <section className="bg-base-100 p-2">
             <h1>Location Details</h1>
-        </section>
-        <section>
+            <LocationCard />
+          </section>
+          <section className="bg-base-100 p-2">
             <h1>Episode Details</h1>
-        </section>
+            <EpisodesCard />
+          </section>
         </div>
-    </div>
-  </main>
+      </div>
+    </main>
   );
 }

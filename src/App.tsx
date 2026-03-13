@@ -5,9 +5,9 @@ import NavigationBar from "./components/layout/NavigationBar";
 function App() {
   return (
     <>
-      <div className="bg-base-200 h-dvh w-dvw p-4">
+      <div className="flex flex-col gap-4 bg-base-200 h-dvh w-dvw p-4">
         <NavigationBar />
-        <div className="p-2 max-h-max max-w-max">
+        <div className="max-h-full max-w-full">
           <Outlet />
         </div>
       </div>
