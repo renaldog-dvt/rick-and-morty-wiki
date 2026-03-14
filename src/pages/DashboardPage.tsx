@@ -2,8 +2,16 @@ import CharacterCard from "../components/display/CharacterCard";
 import EpisodesCard from "../components/display/EpisodesCard";
 import LocationCard from "../components/display/LocationCard";
 import CharacterSearch from "../components/filter/CharacterSearch";
+import { useAppStore } from "../store/useAppStore";
+import type { Character } from "../types/character";
+import type { Episode } from "../types/episode";
+import type { Location } from "../types/location";
 
 export default function DashboardPage() {
+    const character: Character = useAppStore((state) => state.character);
+    const location: Location = useAppStore((state) => state.location);
+    const episodes: Episode[] = useAppStore((state) => state.episodes);
+
   return (
     <main className="flex flex-col gap-2 h-full w-full shadow-md">
       <header className="bg-base-100 flex flex-col gap-2 max-h-max w-full p-2 ">
